@@ -117,7 +117,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-5 items-center sm:items-start">
             {/* Icon */}
             <img
-              src="/profile.png"   // ⭐ HIER setzt du dein Profilbild ein
+              src="/public/profile.png"   // ⭐ HIER setzt du dein Profilbild ein
               alt="Profile Icon"
               className="w-24 h-24 rounded-full border border-zinc-700 shadow-lg object-cover"
             />
