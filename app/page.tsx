@@ -73,7 +73,7 @@ export default function Home() {
 
       {/* Top bar with language selector */}
       <header className="w-full max-w-4xl flex items-center justify-between text-sm text-zinc-400">
-        <span className="font-medium tracking-tight">about-crystalassets</span>
+        <span className="font-medium tracking-tight">about-amo.os</span>
         <div className="flex gap-3">
           <button onClick={() => setLang("EN")} className="hover:text-white transition">EN</button>
           <button onClick={() => setLang("DE")} className="hover:text-white transition">DE</button>
