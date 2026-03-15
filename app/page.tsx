@@ -133,31 +133,28 @@ export default function Home() {
 
 
         {/* ======================================================
-            🟩 PROFILE CARD (mit kräftiger Aura)
+            🟩 PROFILE CARD (Aura am Profilbild zentriert)
         ====================================================== */}
         <div className="relative bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-2xl p-6 shadow-xl">
 
-          {/* AURA */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div
-              className="w-56 h-56 rounded-full blur-3xl opacity-80"
-              style={{
-                background: "radial-gradient(circle, rgba(0,180,255,1), rgba(0,0,0,0))"
-              }}
-            />
-          </div>
-
-          {/* CONTENT */}
           <div className="flex flex-col sm:flex-row gap-5 items-center sm:items-start relative z-10">
 
-            {/* PROFILE IMAGE */}
-            <img
-              src="/profile.png"
-              alt="Profile Icon"
-              width={96}
-              height={96}
-              className="relative z-10 w-24 h-24 rounded-full border border-zinc-700 shadow-lg object-cover"
-            />
+            {/* PROFILE IMAGE + AURA */}
+            <div className="relative flex items-center justify-center">
+              <div
+                className="absolute w-40 h-40 rounded-full blur-3xl opacity-80"
+                style={{
+                  background: "radial-gradient(circle, rgba(0,180,255,1), rgba(0,0,0,0))"
+                }}
+              />
+              <img
+                src="/profile.png"
+                alt="Profile Icon"
+                width={96}
+                height={96}
+                className="relative z-10 w-24 h-24 rounded-full border border-zinc-700 shadow-lg object-cover"
+              />
+            </div>
 
             {/* TEXT */}
             <div className="text-center sm:text-left">
