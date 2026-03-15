@@ -1,5 +1,12 @@
 "use client";
 import { useState } from "react";
+const t = {
+  EN: { ... },
+  DE: { ... },
+  FR: { ... }
+} as const;
+
+const [lang, setLang] = useState<keyof typeof t>("EN");
 
 export default function Home() {
   const [lang, setLang] = useState("EN");
