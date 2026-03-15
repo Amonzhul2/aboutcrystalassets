@@ -1,16 +1,7 @@
 "use client";
 import { useState } from "react";
-const t = {
-  EN: { ... },
-  DE: { ... },
-  FR: { ... }
-} as const;
-
-const [lang, setLang] = useState<keyof typeof t>("EN");
 
 export default function Home() {
-  const [lang, setLang] = useState("EN");
-
   const t = {
     EN: {
       promoTitle: "Crystal assets for your next project",
@@ -74,6 +65,8 @@ export default function Home() {
       prismButton: "Visiter Prism",
     },
   };
+
+  const [lang, setLang] = useState<keyof typeof t>("EN");
 
   return (
     <main className="min-h-screen bg-black text-white flex flex-col items-center px-4 py-10 gap-8">
@@ -165,45 +158,4 @@ export default function Home() {
         <div className="space-y-4">
           <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-2xl p-5 shadow-xl">
             <h3 className="text-sm font-semibold tracking-tight mb-3">
-              {t[lang].overview}
-            </h3>
-            <div className="grid grid-cols-2 gap-3 text-center text-sm">
-              <div className="bg-zinc-950/70 border border-zinc-800 rounded-xl p-3">
-                <p className="text-lg font-semibold">~1</p>
-                <p className="text-zinc-400 text-xs mt-1">{t[lang].yearsCoding}</p>
-              </div>
-              <div className="bg-zinc-950/70 border border-zinc-800 rounded-xl p-3">
-                <p className="text-lg font-semibold">13/14</p>
-                <p className="text-zinc-400 text-xs mt-1">{t[lang].yearsOld}</p>
-              </div>
-              <div className="bg-zinc-950/70 border border-zinc-800 rounded-xl p-3">
-                <p className="text-lg font-semibold">7th</p>
-                <p className="text-zinc-400 text-xs mt-1">{t[lang].grade}</p>
-              </div>
-              <div className="bg-zinc-950/70 border border-zinc-800 rounded-xl p-3">
-                <p className="text-lg font-semibold">3</p>
-                <p className="text-zinc-400 text-xs mt-1">{t[lang].languages}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Prism Promo */}
-          <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-2xl p-5 shadow-xl text-sm text-zinc-400">
-            <h3 className="text-sm font-semibold tracking-tight mb-2 text-white">
-              {t[lang].prismTitle}
-            </h3>
-            <p>{t[lang].prismDesc}</p>
-
-            <a
-              href="https://discord.gg/JH9S8F9Y"
-              target="_blank"
-              className="inline-block mt-3 px-4 py-2 bg-indigo-600 rounded-xl hover:bg-indigo-500 transition text-xs"
-            >
-              {t[lang].prismButton}
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
-}
+              {
