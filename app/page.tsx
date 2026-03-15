@@ -26,7 +26,7 @@ export default function Home() {
     DE: {
       promoTitle: "Kristall‑Qualitäts‑Assets für dein nächstes Projekt",
       promoDesc:
-        "Hochwertige Assets und prism‑inspiriertes Branding für moderne Spiele und Apps.",
+        "Hochwertige Assets und prism‑inspirertes Branding für moderne Spiele und Apps.",
       joinDiscord: "Discord beitreten",
       viewPortfolio: "Portfolio ansehen",
       profileRole: "Entwickler • Designer • Crystal Assets",
@@ -117,7 +117,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-5 items-center sm:items-start">
             {/* Icon */}
             <img
-              src="/profile.png"
+              src="/profile.png"   // ⭐ HIER setzt du dein Profilbild ein
               alt="Profile Icon"
               className="w-24 h-24 rounded-full border border-zinc-700 shadow-lg object-cover"
             />
