@@ -144,7 +144,7 @@ export default function Home() {
               <div
                 className="absolute w-40 h-40 rounded-full blur-3xl opacity-80"
                 style={{
-                  background: "radial-gradient(circle, rgba(0,180,255,1), rgba(0,0,0,0))"
+                  background: "radial-gradient(circle, rgb(0, 162, 255), rgba(0,0,0,0))"
                 }}
               />
               <img
