@@ -117,9 +117,13 @@ export default function Home() {
             {t[lang].joinDiscord}
           </a>
 
-          <button className="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-xl hover:bg-zinc-700 transition text-sm">
-            {t[lang].viewPortfolio}
-          </button>
+          <a
+            href="https://linktr.ee/amo.os"
+            target="_blank"
+            className="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-xl hover:bg-zinc-700 transition text-sm"
+          >
+            {t[lang].viewSocials}
+          </a>
         </div>
       </section>
 
