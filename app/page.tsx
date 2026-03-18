@@ -24,12 +24,14 @@ const t = {
     prismTitle: "Prism Assets",
     prismDesc: "Premium UI elements and assets.",
     prismButton: "Visit Prism",
+    moreInfo: "More Information",
+    favColor: "Favourite Color",
   },
 
   DE: {
     promoTitle: "Crystal‑Assets für dein nächstes Projekt",
     promoDesc:
-      "Hochwertige Assets und prism‑inspiriertes Branding für moderne Spiele und Apps.",
+      "Hochwertige Assets und prism‑inspirierte Gestaltung für moderne Spiele und Apps.",
     joinDiscord: "Discord beitreten",
     viewSocials: "Socials ansehen",
     profileRole: "Entwickler • Designer • Crystal Assets",
@@ -45,6 +47,8 @@ const t = {
     prismTitle: "Prism Assets",
     prismDesc: "Premium UI‑Elemente und Assets.",
     prismButton: "Prism besuchen",
+    moreInfo: "Weitere Informationen",
+    favColor: "Lieblingsfarbe",
   },
 
   FR: {
@@ -66,6 +70,8 @@ const t = {
     prismTitle: "Prism Assets",
     prismDesc: "Éléments UI premium inspirés du cristal.",
     prismButton: "Visiter Prism",
+    moreInfo: "Plus d'informations",
+    favColor: "Couleur préférée",
   },
 };
 
@@ -76,14 +82,22 @@ const t = {
 export default function Home() {
   const [lang, setLang] = useState<keyof typeof t>("EN");
 
+  // NEW: theme color state
+  const [themeColor, setThemeColor] = useState("#000000");
+
   return (
-    <main className="min-h-screen bg-black text-white flex flex-col items-center px-4 py-10 gap-8">
+    <main
+      className="min-h-screen text-white flex flex-col items-center px-4 py-10 gap-8 transition-all"
+      style={{
+        background: themeColor,
+      }}
+    >
 
 
       {/* ======================================================
-          🟧 TOP BAR (Language Selector)
+          🟧 TOP BAR
       ====================================================== */}
-      <header className="w-full max-w-4xl flex items-center justify-between text-sm text-zinc-400">
+      <header className="w-full max-w-4xl flex items-center justify-between text-sm text-zinc-300">
         <span className="font-medium tracking-tight">about-amo.os</span>
 
         <div className="flex gap-3">
@@ -98,12 +112,12 @@ export default function Home() {
       {/* ======================================================
           🟪 PROMO / BANNER
       ====================================================== */}
-      <section className="w-full max-w-4xl bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl">
+      <section className="w-full max-w-4xl bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl">
         <div>
           <h1 className="text-lg md:text-xl font-semibold tracking-tight">
             {t[lang].promoTitle}
           </h1>
-          <p className="text-zinc-400 text-sm mt-1 max-w-md">
+          <p className="text-zinc-300 text-sm mt-1 max-w-md">
             {t[lang].promoDesc}
           </p>
         </div>
@@ -120,7 +134,7 @@ export default function Home() {
           <a
             href="https://linktr.ee/amo.os"
             target="_blank"
-            className="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-xl hover:bg-zinc-700 transition text-sm"
+            className="px-4 py-2 bg-black/40 border border-white/10 rounded-xl hover:bg-black/60 transition text-sm"
           >
             {t[lang].viewSocials}
           </a>
@@ -139,7 +153,7 @@ export default function Home() {
         {/* ======================================================
             🟩 PROFILE CARD
         ====================================================== */}
-        <div className="relative bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-2xl p-6 shadow-xl">
+        <div className="relative bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-xl">
 
           <div className="flex flex-col sm:flex-row gap-5 items-center sm:items-start relative z-10">
 
@@ -156,7 +170,7 @@ export default function Home() {
                 alt="Profile Icon"
                 width={96}
                 height={96}
-                className="relative z-10 w-24 h-24 rounded-full border border-zinc-700 shadow-lg object-cover"
+                className="relative z-10 w-24 h-24 rounded-full border border-white/10 shadow-lg object-cover"
               />
             </div>
 
@@ -169,20 +183,20 @@ export default function Home() {
                 Amo.<b>os</b>
               </h2>
 
-              <p className="text-zinc-400 text-sm mt-1">
+              <p className="text-zinc-300 text-sm mt-1">
                 {t[lang].profileRole}
               </p>
 
-              <div className="flex flex-wrap justify-center sm:justify-start gap-3 text-xs text-zinc-400 mt-3">
-                <span className="px-2 py-1 rounded-full bg-zinc-800/80 border border-zinc-700">🇩🇪 Germany</span>
-                <span className="px-2 py-1 rounded-full bg-zinc-800/80 border border-zinc-700">13/14 y/o</span>
-                <span className="px-2 py-1 rounded-full bg-zinc-800/80 border border-zinc-700">Active since 2026</span>
+              <div className="flex flex-wrap justify-center sm:justify-start gap-3 text-xs text-zinc-300 mt-3">
+                <span className="px-2 py-1 rounded-full bg-black/40 border border-white/10">🇩🇪 Germany</span>
+                <span className="px-2 py-1 rounded-full bg-black/40 border border-white/10">13/14 y/o</span>
+                <span className="px-2 py-1 rounded-full bg-black/40 border border-white/10">Active since 2026</span>
               </div>
             </div>
           </div>
 
           {/* DESCRIPTION */}
-          <p className="text-zinc-400 text-sm mt-5">
+          <p className="text-zinc-300 text-sm mt-5">
             {t[lang].description}
           </p>
         </div>
@@ -190,41 +204,35 @@ export default function Home() {
 
 
         {/* ======================================================
-            🟨 OVERVIEW / QUICK INFO
+            🟨 RIGHT SIDE
         ====================================================== */}
         <div className="space-y-4">
 
-          <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-2xl p-5 shadow-xl">
+          {/* OVERVIEW */}
+          <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-5 shadow-xl">
             <h3 className="text-sm font-semibold tracking-tight mb-3">
               {t[lang].overview}
             </h3>
 
             <div className="grid grid-cols-2 gap-3 text-center text-sm">
-              <div className="bg-zinc-950/70 border border-zinc-800 rounded-xl p-3">
+              <div className="bg-black/40 border border-white/10 rounded-xl p-3">
                 <p className="text-lg font-semibold">~1</p>
-                <p className="text-zinc-400 text-xs mt-1">{t[lang].yearsCoding}</p>
+                <p className="text-zinc-300 text-xs mt-1">{t[lang].yearsCoding}</p>
               </div>
 
-              <div className="bg-zinc-950/70 border border-zinc-800 rounded-xl p-3">
+              <div className="bg-black/40 border border-white/10 rounded-xl p-3">
                 <p className="text-lg font-semibold">13/14</p>
-                <p className="text-zinc-400 text-xs mt-1">{t[lang].yearsOld}</p>
+                <p className="text-zinc-300 text-xs mt-1">{t[lang].yearsOld}</p>
               </div>
 
-              <div className="bg-zinc-950/70 border border-zinc-800 rounded-xl p-3">
+              <div className="bg-black/40 border border-white/10 rounded-xl p-3">
                 <p className="text-lg font-semibold">7th</p>
-                <p className="text-zinc-400 text-xs mt-1">{t[lang].grade}</p>
+                <p className="text-zinc-300 text-xs mt-1">{t[lang].grade}</p>
               </div>
 
-              <div className="bg-zinc-950/70 border border-zinc-800 rounded-xl p-3">
+              <div className="bg-black/40 border border-white/10 rounded-xl p-3">
                 <p className="text-lg font-semibold">3</p>
-                <p className="text-zinc-400 text-xs mt-1">{t[lang].languages}</p>
-              </div>
-
-              <div className="bg-zinc-950/70 border border-zinc-800 rounded-xl p-3">
-                <p className="text-lg font-semibold">Stormy Blue</p>
-                <p className="text-zinc-400 text-xs mt-1">{t[lang].favourite color}</p>
-                style={{ 
-                  background: "radial-gradient(circle, rgb(0, 162, 255), rgba(0,0,0,0))" }}
+                <p className="text-zinc-300 text-xs mt-1">{t[lang].languages}</p>
               </div>
             </div>
           </div>
@@ -232,9 +240,31 @@ export default function Home() {
 
 
           {/* ======================================================
-              🟪 PRISM PROMO
+              🟦 MORE INFORMATION (NEW)
           ====================================================== */}
-          <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-2xl p-5 shadow-xl text-sm text-zinc-400">
+          <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-5 shadow-xl text-sm text-zinc-300">
+            <h3 className="text-sm font-semibold tracking-tight mb-2 text-white">
+              {t[lang].moreInfo}
+            </h3>
+
+            {/* Favourite Color */}
+            <div className="flex items-center gap-3 mt-3">
+              <span className="text-xs">{t[lang].favColor}:</span>
+
+              <button
+                onClick={() => setThemeColor("#495987")}
+                className="w-6 h-6 rounded-md border border-white/20 shadow"
+                style={{ background: "#495987" }}
+              />
+
+              <span className="text-xs">Stormy Blue (#495987)</span>
+            </div>
+          </div>
+
+
+
+          {/* PRISM PROMO */}
+          <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-5 shadow-xl text-sm text-zinc-300">
             <h3 className="text-sm font-semibold tracking-tight mb-2 text-white">
               {t[lang].prismTitle}
             </h3>
