@@ -10,7 +10,7 @@ const t = {
     promoTitle: "Crystal assets for your next project",
     promoDesc: "High quality assets and prism‑inspired branding for modern games and apps.",
     joinDiscord: "Join Discord",
-    viewPortfolio: "View Socials",
+    viewSocials: "View Socials",
     profileRole: "Developer • Designer • Crystal Assets",
     description:
       "Hello, I'm Amo.os, a new developer and designer! I specialize in making pictures, and I don't have much experience in coding or asset creation yet — but I'm learning. C ya!",
@@ -31,7 +31,7 @@ const t = {
     promoDesc:
       "Hochwertige Assets und prism‑inspiriertes Branding für moderne Spiele und Apps.",
     joinDiscord: "Discord beitreten",
-    viewPortfolio: "Socials ansehen",
+    viewSocials: "Socials ansehen",
     profileRole: "Entwickler • Designer • Crystal Assets",
     description:
       "Hallo, ich bin Amo.os, ein neuer Entwickler und Designer! Ich mache hauptsächlich Bilder und habe noch wenig Erfahrung im Programmieren oder Asset‑Design — aber ich lerne. C ya!",
@@ -52,7 +52,7 @@ const t = {
     promoDesc:
       "Assets haut de gamme et branding inspiré du prisme pour jeux et applications modernes.",
     joinDiscord: "Rejoindre Discord",
-    viewPortfolio: "Voir les réseaux sociaux",
+    viewSocials: "Voir les réseaux sociaux",
     profileRole: "Développeur • Designer • Crystal Assets",
     description:
       "Salut, je suis Amo.os, un nouveau développeur et designer ! Je crée surtout des images et j'apprends encore le code et la création d'assets. À plus !",
@@ -124,6 +124,8 @@ export default function Home() {
           >
             {t[lang].viewSocials}
           </a>
+        </div>
+      </section>
 
 
 
@@ -135,7 +137,7 @@ export default function Home() {
 
 
         {/* ======================================================
-            🟩 PROFILE CARD (Aura am Profilbild zentriert)
+            🟩 PROFILE CARD
         ====================================================== */}
         <div className="relative bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-2xl p-6 shadow-xl">
 
