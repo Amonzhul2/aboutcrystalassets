@@ -10,7 +10,7 @@ const t = {
     promoTitle: "Crystal assets for your next project",
     promoDesc: "High quality assets and prism‑inspired branding for modern games and apps.",
     joinDiscord: "Join Discord",
-    viewPortfolio: "View Portfolio",
+    viewPortfolio: "View Socials",
     profileRole: "Developer • Designer • Crystal Assets",
     description:
       "Hello, I'm Amo.os, a new developer and designer! I specialize in making pictures, and I don't have much experience in coding or asset creation yet — but I'm learning. C ya!",
@@ -22,16 +22,16 @@ const t = {
     focusTitle: "Focus",
     focusDesc: "Making art, learning coding, and most importantly: school.",
     prismTitle: "Prism Assets",
-    prismDesc: "Premium crystal‑inspired UI elements and assets.",
+    prismDesc: "Premium UI elements and assets.",
     prismButton: "Visit Prism",
   },
 
   DE: {
-    promoTitle: "Kristall‑Qualitäts‑Assets für dein nächstes Projekt",
+    promoTitle: "Crystal‑Assets für dein nächstes Projekt",
     promoDesc:
       "Hochwertige Assets und prism‑inspiriertes Branding für moderne Spiele und Apps.",
     joinDiscord: "Discord beitreten",
-    viewPortfolio: "Portfolio ansehen",
+    viewPortfolio: "Socials ansehen",
     profileRole: "Entwickler • Designer • Crystal Assets",
     description:
       "Hallo, ich bin Amo.os, ein neuer Entwickler und Designer! Ich mache hauptsächlich Bilder und habe noch wenig Erfahrung im Programmieren oder Asset‑Design — aber ich lerne. C ya!",
@@ -43,7 +43,7 @@ const t = {
     focusTitle: "Fokus",
     focusDesc: "Kunst machen, Programmieren lernen und am wichtigsten: Schule.",
     prismTitle: "Prism Assets",
-    prismDesc: "Premium UI‑Elemente und Assets im Kristallstil.",
+    prismDesc: "Premium UI‑Elemente und Assets.",
     prismButton: "Prism besuchen",
   },
 
@@ -52,7 +52,7 @@ const t = {
     promoDesc:
       "Assets haut de gamme et branding inspiré du prisme pour jeux et applications modernes.",
     joinDiscord: "Rejoindre Discord",
-    viewPortfolio: "Voir le portfolio",
+    viewPortfolio: "Voir les réseaux sociaux",
     profileRole: "Développeur • Designer • Crystal Assets",
     description:
       "Salut, je suis Amo.os, un nouveau développeur et designer ! Je crée surtout des images et j'apprends encore le code et la création d'assets. À plus !",
