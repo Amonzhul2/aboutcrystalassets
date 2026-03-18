@@ -124,8 +124,6 @@ export default function Home() {
           >
             {t[lang].viewSocials}
           </a>
-        </div>
-      </section>
 
 
 
