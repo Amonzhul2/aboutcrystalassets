@@ -24,7 +24,7 @@ const t = {
     prismTitle: "Prism Assets",
     prismDesc: "Premium UI elements and assets.",
     prismButton: "Visit Prism",
-    footer: "This website contains AI‑made generated content!",
+    footer: "This website contains AI generated content!",
   },
 
   DE: {
