@@ -219,6 +219,13 @@ export default function Home() {
                 <p className="text-lg font-semibold">3</p>
                 <p className="text-zinc-400 text-xs mt-1">{t[lang].languages}</p>
               </div>
+
+              <div className="bg-zinc-950/70 border border-zinc-800 rounded-xl p-3">
+                <p className="text-lg font-semibold">Stormy Blue</p>
+                <p className="text-zinc-400 text-xs mt-1">{t[lang].favourite color}</p>
+                style={{ 
+                  background: "radial-gradient(circle, rgb(0, 162, 255), rgba(0,0,0,0))" }}
+              </div>
             </div>
           </div>
 
