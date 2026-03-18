@@ -19,19 +19,18 @@ const t = {
     yearsOld: "Years Old",
     grade: "Grade",
     languages: "Languages",
-    focusTitle: "Focus",
-    focusDesc: "Making art, learning coding, and most importantly: school.",
+    moreInfo: "More Information",
+    favColor: "Favourite Color",
     prismTitle: "Prism Assets",
     prismDesc: "Premium UI elements and assets.",
     prismButton: "Visit Prism",
-    moreInfo: "More Information",
-    favColor: "Favourite Color",
+    footer: "This website contains AI‑made generated content!",
   },
 
   DE: {
     promoTitle: "Crystal‑Assets für dein nächstes Projekt",
     promoDesc:
-      "Hochwertige Assets und prism‑inspirierte Gestaltung für moderne Spiele und Apps.",
+      "Hochwertige Assets und prism‑inspiriertes Branding für moderne Spiele und Apps.",
     joinDiscord: "Discord beitreten",
     viewSocials: "Socials ansehen",
     profileRole: "Entwickler • Designer • Crystal Assets",
@@ -42,13 +41,12 @@ const t = {
     yearsOld: "Jahre Alt",
     grade: "Klasse",
     languages: "Sprachen",
-    focusTitle: "Fokus",
-    focusDesc: "Kunst machen, Programmieren lernen und am wichtigsten: Schule.",
+    moreInfo: "Weitere Informationen",
+    favColor: "Lieblingsfarbe",
     prismTitle: "Prism Assets",
     prismDesc: "Premium UI‑Elemente und Assets.",
     prismButton: "Prism besuchen",
-    moreInfo: "Weitere Informationen",
-    favColor: "Lieblingsfarbe",
+    footer: "Diese Website enthält KI‑generierte Inhalte!",
   },
 
   FR: {
@@ -65,32 +63,34 @@ const t = {
     yearsOld: "Âge",
     grade: "Classe",
     languages: "Langues",
-    focusTitle: "Focus",
-    focusDesc: "Créer de l'art, apprendre le code, et surtout : l'école.",
+    moreInfo: "Plus d'informations",
+    favColor: "Couleur préférée",
     prismTitle: "Prism Assets",
     prismDesc: "Éléments UI premium inspirés du cristal.",
     prismButton: "Visiter Prism",
-    moreInfo: "Plus d'informations",
-    favColor: "Couleur préférée",
+    footer: "Ce site contient du contenu généré par IA !",
   },
 };
 
 
 // ======================================================
-// 🟩 STATE
+// 🟩 STATE + THEME
 // ======================================================
+const originalTheme = "#000000";
+const stormyBlue = "#495987";
+
 export default function Home() {
   const [lang, setLang] = useState<keyof typeof t>("EN");
+  const [themeColor, setThemeColor] = useState(originalTheme);
 
-  // NEW: theme color state
-  const [themeColor, setThemeColor] = useState("#000000");
+  function toggleTheme() {
+    setThemeColor((prev) => (prev === originalTheme ? stormyBlue : originalTheme));
+  }
 
   return (
     <main
-      className="min-h-screen text-white flex flex-col items-center px-4 py-10 gap-8 transition-all"
-      style={{
-        background: themeColor,
-      }}
+      className="min-h-screen text-white flex flex-col items-center px-4 py-10 gap-8 transition-colors duration-300"
+      style={{ backgroundColor: themeColor }}
     >
 
 
@@ -239,25 +239,32 @@ export default function Home() {
 
 
 
-          {/* ======================================================
-              🟦 MORE INFORMATION (NEW)
-          ====================================================== */}
+          {/* MORE INFORMATION */}
           <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-5 shadow-xl text-sm text-zinc-300">
             <h3 className="text-sm font-semibold tracking-tight mb-2 text-white">
               {t[lang].moreInfo}
             </h3>
 
-            {/* Favourite Color */}
-            <div className="flex items-center gap-3 mt-3">
-              <span className="text-xs">{t[lang].favColor}:</span>
+            <div className="grid grid-cols-2 gap-3 text-center text-sm mt-3">
 
+              {/* HEX Display Box */}
+              <div className="bg-black/40 border border-white/10 rounded-xl p-3 flex flex-col items-center justify-center">
+                <p className="text-lg font-semibold">#495987</p>
+                <p className="text-zinc-300 text-xs mt-1">{t[lang].favColor}</p>
+              </div>
+
+              {/* Clickable Color Box */}
               <button
-                onClick={() => setThemeColor("#495987")}
-                className="w-6 h-6 rounded-md border border-white/20 shadow"
-                style={{ background: "#495987" }}
-              />
+                onClick={toggleTheme}
+                className="bg-black/40 border border-white/10 rounded-xl p-3 flex flex-col items-center justify-center hover:bg-black/60 transition"
+              >
+                <div
+                  className="w-6 h-6 rounded-md border border-white/20 shadow mb-2"
+                  style={{ background: "#495987" }}
+                />
+                <p className="text-xs">Stormy Blue</p>
+              </button>
 
-              <span className="text-xs">Stormy Blue (#495987)</span>
             </div>
           </div>
 
@@ -282,6 +289,16 @@ export default function Home() {
 
         </div>
       </section>
+
+
+
+      {/* ======================================================
+          🟫 FOOTER (AI CONTENT NOTICE)
+      ====================================================== */}
+      <footer className="text-xs text-zinc-400 mt-10 opacity-70">
+        {t[lang].footer}
+      </footer>
+
     </main>
   );
 }
